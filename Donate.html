@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now - Tila Voluntary Association</title>
+    <link rel="stylesheet" href="common.css">    
+    <style>
+
+        .container {
+            max-width: 800px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            min-height: 100px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #d62828;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        .success-message {
+            text-align: center;
+            color: green;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            text-align: center;
+            color: red;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo">
+            <h1>Tila Voluntary Association</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="programs.html">Programs</a>
+            <a href="partners.html">Partners</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Donate Now</h1>
+        <p>Your donation can transform lives and empower communities. Thank you for supporting Tila Voluntary Association!</p>
+          <form action="Donate.php"method="post"></form>
+        <form id="donationForm">
+            <div class="form-group">
+                <label for="Fullname">Full Name</label>
+                <input type="text" id="Fullname" name="Fullname" pattern="^[A-Za-z\s]+$" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Donation Amount (ETB)</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter donation amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="">Select a payment method</option>
+                    <option value="mobile">Mobile Payment (e.g., Telebirr)</option>
+                    <option value="bank">Bank Transfer</option>
+                    <option value="cash">Cash</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message (Optional)</label>
+                <textarea id="message" name="message" rows="4" placeholder="Leave a message for us"></textarea>
+            </div>
+
+            <button type="submit">Donate Now</button>
+        </form>
+
+        <div id="responseMessage" class="success-message" style="display: none;">Thank you for your donation! Your support means the world to us.</div>
+    </div>
+
+    <script>
+        const donationForm = document.getElementById('donationForm');
+        const responseMessage = document.getElementById('responseMessage');
+
+        donationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const amount = document.getElementById('amount').value;
+
+            if (name && email && amount) {
+                responseMessage.style.display = 'block';
+                responseMessage.textContent = 'Thank you, ' + name + '! Your donation of ' + amount + ' ETB has been received.';
+
+                donationForm.reset();
+            } else {
+                responseMessage.style.display = 'block';
+                responseMessage.textContent = 'Please fill out all required fields.';
+                responseMessage.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+
+</html>

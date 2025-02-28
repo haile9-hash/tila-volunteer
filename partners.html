@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tila Volunteer Association - Partners</title>
+    <link rel="stylesheet" href="./styles.css">    
+    <style>
+        
+        /* Partners Section */
+        .partners-section {
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .partner-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .partner-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .partner-card h3 {
+            color: #2c3e50;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+
+        .partner-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+        /* Footer Styles */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer a{
+        color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 1em;
+            }
+
+            .partner-card img {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo">
+            <h1>Tila Voluntary Association</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="programs.html">Programs</a>
+            <a href="partners.html">Partners</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Partners Section -->
+    <div class="partners-section">
+        <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px;">Our Trusted Partners</h2>
+
+        <div class="partners-grid">
+
+            <div class="partner-card">
+                <img src="./assets/par1.jpg" alt="Partner 1 Logo">
+                <h3>Bahir dar town's girls club federation</h3>
+            </div>
+
+            <div class="partner-card">
+                <img src="./assets/partner22.jpg" alt="Partner 2 Logo">
+                <h3>Bahir Dar kefeta youth coalition</h3>
+            </div>
+
+            <div class="partner-card">
+                <img src="./assets/partner33.jpg" alt="Partner 3 Logo">
+                <h3>Youth Network for Sustanible Development</h3>
+            </div>
+<!-- Add more partner cards here -->
+
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
+        <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
+    </footer>
+
+</body>
+</html>

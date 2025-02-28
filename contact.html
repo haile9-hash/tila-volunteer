@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us</title>
+    <link rel="stylesheet" href="./styles.css">    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #e63946;
+        padding: 2px 20px;
+        height: 60px;
+        border-bottom: 2px solid #ccc;
+        position: relative;
+        z-index: 10;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      .logo h1 {
+        font-size: 18px;
+        color: white;
+      }
+
+      nav {
+        display: flex;
+        gap: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+      }
+
+      nav a:hover {
+        color: #007bff;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body .mainH1 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #7e12e4;
+        text-align: center;
+      }
+
+      body p {
+        font-size: 16px;
+        color: #e63946;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .customerS {
+        display: inline;
+        max-width: 550px;
+        margin-left: 150px;
+      }
+
+      form {
+        display: block;
+        float: right;
+        border-radius: 10px;
+        /* max-width: 300px; */
+        width: 250px;
+        margin: 40px;
+        margin-right: 150px;
+        padding: 30px;
+        padding-right: 45px;
+        align-items: center;
+        background-color: #e63946;
+      }
+
+      form-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      form label {
+        font-weight: 700;
+        color: #fff;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 2px solid #e63946;
+        border-radius: 8px;
+        background-color: #fff;
+        font-size: 0.9rem;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #72151d;
+        box-shadow: 0 0 8px #e6394680;
+      }
+
+      textarea {
+        height: 150px;
+      }
+
+      input[type="submit"] {
+        width: 50%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-left: 30%;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        background-color: #7e12e4;
+        color: white;
+      }
+
+      .contain {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
+        clear: right;
+        margin-bottom: 25px;
+      }
+
+      div i {
+        font-size: 2rem;
+        color: #0065a4;
+        cursor: pointer;
+      }
+
+      .contain h2 {
+        color: #7e12e4;
+        margin-bottom: 10px;
+      }
+
+      .contain p {
+        color: #000;
+      }
+
+      .soM {
+        margin-top: 20px;
+      }
+
+      .loc {
+        margin-top: 30px;
+      }
+
+      .left-div,
+      .right-div,
+      .map {
+        border-left: 1px solid #e63946;
+        border-radius: 5%;
+        padding: 10px;
+        padding-left: 20px;
+      }
+
+
+      iframe {
+        border-radius: 4%;
+      }
+
+      footer {
+        background-color: hsl(0, 0%, 20%);
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+        position: relative;
+      }
+
+      footer p {
+        color: white;
+      }
+      footer a{
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo" />
+        <h1>Tila Voluntary Association</h1>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <h1 class="mainH1">Get in touch</h1>
+    <p>your ideas are important for us!</p>
+
+    <img
+      class="customerS"
+      src="./assets/cus_cirvice_ilust (3).jpg"
+      alt="customer service"
+    />
+    <form action="tila.html" method="post">
+      <div class="form-group">
+        <label for="fullname">Full Name</label> <br />
+        <input type="text" id="text" name="text" placeholder="Your full name" />
+        <br />
+      </div>
+
+      <div class="form-group">
+        <label for="fullname">Email</label> <br />
+        <input type="email" id="email" name="email" placeholder="Your Email" />
+        <br />
+      </div>
+
+      <div class="form-group">
+        <label for="fullname">Message</label> <br />
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Your Comments Here..."
+        ></textarea>
+        <br />
+      </div>
+
+      <input type="submit" name="submit" />
+    </form>
+
+    <div class="contain">
+    
+      <div class="left-div">
+        <i class="fas fa-phone"></i>
+        <h2>Phone</h2>
+        <p>+251 94 347 0707</p>
+        <p>+251 90 915 3924</p>
+
+        <h2 class="soM">Social Media</h2>
+        <a href="https://t.me/tivoas" target="_blank" style="margin-right: 10px;">
+          <i class="fab fa-telegram" style="color: #e63946; font-size: 1.5rem;"></i>
+        </a>
+        <a href="https://www.facebook.com/Tila-voluntary-association-BAHIR-DAR-106665315287073/?ref=pages_you_manage" target="_blank">
+          <i class="fab fa-facebook" style="color: #e63946; font-size: 1.5rem;"></i>
+        </a>
+      </div>
+     
+      <div class="right-div">
+        <i class="fas fa-envelope"></i>
+        <h2>Email</h2>
+        <p>shegawasrat12@gmail.com</p>
+
+        <h2 class="loc">Location</h2>
+        <p>Bahir Dar, Ethiopia</p>
+      </div>
+      <div class="map">
+        <h2>Map</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15633.710892102123!2d37.40020207637977!3d11.592824199349852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1644ce107991537d%3A0x3e8bedd070a29619!2sBahir%20Dar%20University%20Poly%20Campus!5e0!3m2!1sen!2set!4v1735555255376!5m2!1sen!2set"
+          width="400"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
+      <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tila Voluntary Association</title>
+    <link rel="stylesheet" href="./styles.css">    
+    <style>
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 60px); /* Full viewport height minus header */
+        background: url("./assets/Tila 1.jpg") no-repeat center center;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 2em 1em;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+      }
+
+      .hero p {
+        font-size: 1.5em;
+      }
+
+      .cta-buttons {
+        margin-top: 1em;
+        animation-name: animBtn;
+        animation-duration: 1s;
+      }
+
+      @keyframes animBtn {
+        from {
+          transform: translateY(-15px);
+        }
+        to {
+          transform: translateY(0px);
+        }
+      }
+
+      .cta-buttons a {
+        text-decoration: none;
+        color: white;
+        padding: 0.8em 1.5em;
+        margin: 0 0.5em;
+        border-radius: 5px;
+        font-size: 1.2em;
+        background-color: #8a2be2; /* Violet-blue background color */
+        display: inline-block;
+      }
+
+      .cta-buttons a:hover {
+        background-color: #5d3fd3; /* Slightly darker violet-blue */
+      }
+
+      footer {
+        background-color: hsl(0, 0%, 20%);
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+        position: relative;
+      }
+      footer a{
+        color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo" />
+        <h1>Tila Voluntary organization</h1>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Empowering Communities, Transforming Lives</h1>
+      <p>Join us in making a difference for a better tomorrow.</p>
+      <div class="cta-buttons">
+        <br />
+        <a href="Donate.html" target="_blank">Donate Now</a>
+        <a href="join.html">Join Us</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; Tila Voluntary Association 2025. All Rights Reserved.</p>
+      <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
+    </footer>
+  </body>
+</html>

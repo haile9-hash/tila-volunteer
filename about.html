@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Tila Voluntary Association</title>
+    <link rel="stylesheet" href="styles.css">    
+    <style>
+    
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        overflow: hidden;
+        padding: 2rem;
+      }
+
+      .team {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        margin-bottom: 0px;
+        /* sbox-shadow: 2px 10px 30px rgba(0, 0, 0, 0.1); */
+        animation-name: teammove;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes teammove {
+        from {
+          transform: translateX(-30px) translateY(-50px);
+        }
+        to {
+          transform: translateX(0px) translateX(0px);
+        }
+      }
+
+      .team-member {
+        text-align: center;
+        margin: 1rem;
+        /* box-shadow: 2px 10px 30px rgba(0, 0, 0, 0.1); */
+        border-radius: 20px;
+      }
+
+      .team-member img {
+        width: 150px;
+        height: 150px;
+        padding-top: 5px;
+        border-radius: 50%;
+        transition: 0.3s;
+        /* border: 3px solid #e63946; */
+      }
+      .team-member img:hover {
+        transform: translateY(-15px);
+        border-bottom: 5px solid salmon;
+        border-left: 5px solid salmon;
+      }
+
+      .team-member h3 {
+        margin-top: 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      p > .spans {
+        font-weight: 500;
+      }
+
+      .content-section {
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .content-section:hover {
+        transform: translateY(-15px);
+      }
+
+      .content-section h2 {
+        color: #e63946;
+        border-bottom: 2px solid #e63946;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      ul li {
+        margin: 0.5rem 0;
+      }
+
+      /* middle divs */
+      .contain {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 5px;
+        margin-top: 10px;
+        padding: 20px 5px;
+        gap: 28px;
+      }
+
+      .b0,
+      .boxes {
+        padding: 20px;
+        padding-top: 8px;
+        border-top: 1.5px solid #e63946;
+        box-shadow: 8px 12px 8px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1); */
+        border-radius: 15px;
+        transition: transform 0.3s;
+        animation-name: boxMove;
+        animation-duration: 2s;
+      }
+
+      @keyframes boxMove {
+        from {
+          transform: translateX(200px);
+        }
+        to {
+          transform: translateX(0px);
+        }
+      }
+
+      .b0:hover,
+      .boxes:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 25px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .b0 {
+        width: 100%;
+      }
+
+      .boxes {
+        width: calc(46% - 10px);
+      }
+
+      .b0 h2,
+      .boxes h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        /* color: blue; */
+        color: #e63946;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+
+      .more {
+        display: none;
+      }
+
+      .btn {
+        color: white;
+        padding: 8px;
+        margin-top: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0;
+        font-size: 17px;
+        font-weight: bold;
+        transition: 0.6s;
+      }
+
+      .b0:hover .btn,
+      .boxes:hover .btn {
+        background-color: #0056b3;
+        opacity: 1;
+      }
+
+      footer {
+        background: hsl(0, 0%, 20%);
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 2rem;
+      }
+
+      footer p {
+        margin: 0;
+      }
+      footer a{
+        color: white;
+        
+      }
+
+      .images-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-evenly;
+        /* box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); */
+        border-radius: 30px;
+        max-width: 95%;
+        padding-left: 15px;
+      }
+
+      .imgs {
+        max-width: 250px;
+        border-radius: 20px;
+        transition: 0.3s;
+      }
+
+      .imgs:hover {
+        transform: skew(10deg, 10deg);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo" />
+        <h1>Tila Voluntary Association</h1>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- Team Section -->
+      <div class="team">
+        <div class="team-member">
+          <img src="./assets/prese.jpg" alt="President" />
+          <h3>President</h3>
+          <p>
+            <span class="spans">Senayt Worku Gebrie</span>: <br />Leading with
+            passion and commitment.
+          </p>
+        </div>
+        <div class="team-member">
+          <img src="./assets/vic pre.jpg" alt="Sub-President" />
+          <h3>Vice President</h3>
+          <p>
+            <span class="spans">Shegaw Asrat Ayalew</span>: <br />
+            Supporting and empowering the team.
+          </p>
+        </div>
+        <div class="team-member">
+          <img src="./assets/Sec.jpg" alt="Secretary" />
+          <h3>General Secretory</h3>
+          <p>
+            <span class="spans">Temesgen Simegnew</span>: <br />
+            Ensuring smooth operations and organization.
+          </p>
+        </div>
+        <div class="team-member">
+          <img src="./assets/Casher.jpg" alt="Secretary" />
+          <h3>Casher</h3>
+          <p>
+            <span class="spans">Dawit Yalew</span>: <br />
+            Ensuring smooth operations and organization.
+          </p>
+        </div>
+      </div>
+      <div class="contain">
+        <div class="b0">
+          <h2>Who we are</h2>
+          <p>
+            Tila Voluntary Association founded in 2012 by 15 students in
+            Bahir Dar city administration. The voluntary Association has been
+            fulfilling its social responsibility by providing educational
+            materials, clothing, monthly allowance and other support.
+
+            <span class="more">
+              <br />
+              <br />
+              Tila voluntary Association, which is in its 5th year, is currently
+              doing great work with not less than 60 young people as members. It
+              is a voluntary association that has been working since June 2015
+              by signing a memorandum of understanding with peer associations
+            </span>
+          </p>
+          <button class="btn">Read More</button>
+        </div>
+
+        <div class="boxes b1">
+          <h2>Vision</h2>
+          <p>
+            To see the nature of a generation that is socially, economically and
+            psychologically developed
+            <span class="more">
+              , free from the spirit of old age (needs absolute support from the
+              person) and useful to itself and society.
+            </span>
+          </p>
+          <button class="btn">Read More</button>
+        </div>
+        <div class="boxes b2">
+          <h2>Objective</h2>
+          <p>
+            ✓ Creating an active citizen and patriotic society in our city by
+            the year of 2025 <br />
+            <span class="more">
+              ✓ Creating a young person who protects himself, his family and
+              friends from addiction and gender violence <br />
+              ✓ Creating job opportunities for young people and the elderly to
+              support themselves and their families in 2025. <br />
+              ✓ To increase the number of volunteers in Bahir Dar city by 15
+              percent in 2025 from current data. <br />
+              ✓ Enhancing Ethiopian good values that increase Ethiopian
+              identity, national unity and social cohesion through training and
+              exchange of experiences.
+            </span>
+          </p>
+          <button class="btn">Read More</button>
+        </div>
+        <div class="boxes b3">
+          <h2>Major Focusing Area</h2>
+          <p>
+            ✓ Health, Education, Economy, Capacity ... <br />
+            <span class="more">
+              ✓ Health (SRH, Gender based violence, harmful practice, early
+              marriage, prevention of HIV/AIDS) <br />
+              ✓ Education ( supporting student who are not fulfilling their
+              education material) <br />
+              ✓ Economy (enhancing youth economic empower by creating job
+              opportunities ) <br />
+              ✓ Capacity building (facilitating capacity building training for
+              youths and their family) <br />
+            </span>
+          </p>
+          <button class="btn">Read More</button>
+        </div>
+        <div class="boxes b4">
+          <h2>Detailed Tasks</h2>
+          <p>
+            ✓ Feeding the elderly individual and their families <br />
+            ✓ Providing support to street children <br />
+            <span class="more">
+              ✓ Participate Youth summer voluntary activities <br />
+              ✓ Supporting students who are not covering their educational and
+              sanitary materials <br />
+              ✓ Job creation for young individual and elderly individual <br />
+              ✓ Conduct Blood donation programs <br />
+              ✓ Covering medical expenses <br />
+              ✓ Monthly redemption coverage <br />
+              ✓ Cascade capacity building training <br />
+              ✓ Conduct annual Book fair and panel discussion <br />
+              ✓ Preparing experience sharing progra <br />
+            </span>
+          </p>
+          <button class="btn">Read More</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="images-container">
+      <img src="./assets/tilaCerti (2).jpg" alt="" class="imgs" />
+      <img src="./assets/tilaCerti (3).jpg" alt="" class="imgs" />
+      <img src="./assets/tilaCerti (1).jpg" alt="" class="imgs" />
+      <img src="./assets/tilaCerti (4).jpg" alt="" class="imgs" />
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
+      <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
+    </footer>
+
+    <script>
+      const readMoreBtn = document.querySelectorAll(".btn");
+      for (let i = 0; i < readMoreBtn.length; i++) {
+        readMoreBtn[i].addEventListener("click", function () {
+          const content = this.previousElementSibling;
+          const moreContent = content.querySelector(".more");
+          moreContent.style.display =
+            moreContent.style.display === "none" ||
+            moreContent.style.display === ""
+              ? "inline"
+              : "none";
+          this.textContent =
+            moreContent.style.display === "none" ? "Read More" : "hide";
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tila Volunteer Association - Programs</title>
+    <link rel="stylesheet" href="./styles.css">    
+    <style>
+        
+        /* Programs Section */
+        .programs-section {
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .program-card .program-content {
+            padding: 20px;
+        }
+
+        .program-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .program-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .program-card:hover {
+            transform: translateY(-15px); /* Slightly lift the card on hover */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer a{
+        color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo">
+            <h1>Tila Voluntary Association</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="programs.html">Programs</a>
+            <a href="partners.html">Partners</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Programs Section -->
+    <div class="programs-section">
+        <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px;">Our Ongoing Programs</h2>
+
+        <div class="programs-grid">
+
+            <div class="program-card">
+                <img src="./assets/Tila im8.jpg" alt="Blood Donation">
+                <div class="program-content">
+                    <h3>Blood Donation Campaign</h3>
+                    <p>Join us in saving lives by donating blood. Our regular campaigns help replenish blood supplies and support patients in need.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <img src="./assets/Tila im9.jpg" alt="Books for Children">
+                <div class="program-content">
+                    <h3>Books for Children Collection</h3>
+                    <p>Help us collect books to provide young children with the resources they need to learn and grow. Every book matters!</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <img src="./assets/Tila im3.jpg" alt="Building Elder's Houses">
+                <div class="program-content">
+                    <h3>Building Houses for Elders</h3>
+                    <p>We aim to build homes for the elderly who are in need of safe, secure shelter. Your support can make a difference!</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <img src="./assets/Tila im4.jpg" alt="Prepare Exhibition">
+                <div class="program-content">
+                    <h3>Exhibition Preparation</h3>
+                    <p>We organize community exhibitions to showcase local talents, arts, and cultural heritage. Come be part of this vibrant initiative!</p>
+                </div>
+            </div>
+            <div class="program-card">
+                <img src="./assets/Tila im5.jpg" alt="Street Children Support">
+                <div class="program-content">
+                    <h3>Street Children Support</h3>
+                    <p>We provide assistance to street children, helping them access education, healthcare, and safe environments. Your support can change lives!</p>
+                </div>
+            </div>
+    
+            <div class="program-card">
+                <img src="./assets/Tila im10.jpg" alt="Life Skills Training">
+                <div class="program-content">
+                    <h3>Life Skills Training</h3>
+                    <p>Empowering individuals with essential life skills such as financial literacy, health education, and conflict resolution.</p>
+                </div>
+            </div>
+    
+        </div>
+
+            <!-- Add more programs here as needed -->
+
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
+        <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
+    </footer>
+
+</body>
+</html>
