@@ -6,11 +6,63 @@
     <title>Tila Volunteer Association - Partners</title>
     <link rel="stylesheet" href="./styles.css">    
     <style>
-        
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: red;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
         /* Partners Section */
         .partners-section {
             max-width: 1200px;
             margin: 40px auto;
+            padding: 0 20px;
         }
 
         .partners-grid {
@@ -48,6 +100,7 @@
             line-height: 1.6;
             margin-top: 10px;
         }
+
         /* Footer Styles */
         footer {
             background-color: black;
@@ -56,19 +109,36 @@
             padding: 20px 0;
             margin-top: 40px;
         }
-        footer a{
-        color: white;
+
+        footer a {
+            color: white;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #f8f9fa;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            nav.active {
+                display: flex;
             }
 
             nav a {
-                margin-left: 15px;
-                font-size: 1em;
+                margin: 10px 0;
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid #ddd;
             }
 
             .partner-card img {
@@ -85,7 +155,12 @@
             <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo">
             <h1>Tila Voluntary Association</h1>
         </div>
-        <nav>
+        <div class="hamburger" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="programs.html">Programs</a>
@@ -99,7 +174,6 @@
         <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px;">Our Trusted Partners</h2>
 
         <div class="partners-grid">
-
             <div class="partner-card">
                 <img src="./assets/par1.jpg" alt="Partner 1 Logo">
                 <h3>Bahir dar town's girls club federation</h3>
@@ -112,18 +186,24 @@
 
             <div class="partner-card">
                 <img src="./assets/partner33.jpg" alt="Partner 3 Logo">
-                <h3>Youth Network for Sustanible Development</h3>
+                <h3>Youth Network for Sustainable Development</h3>
             </div>
-<!-- Add more partner cards here -->
-
+            <!-- Add more partner cards here -->
         </div>
     </div>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
-        <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
+        <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</a>
     </footer>
 
+    <script>
+        // Function to toggle the navigation menu on mobile
+        function toggleNav() {
+            const nav = document.getElementById("nav");
+            nav.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
