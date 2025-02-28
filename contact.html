@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact us</title>
-    <link rel="stylesheet" href="./styles.css">    
+    <link rel="stylesheet" href="./styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -16,8 +16,10 @@
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
 
+      /* Header Section */
       header {
         display: flex;
         align-items: center;
@@ -61,6 +63,20 @@
         color: #007bff;
       }
 
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 4px 0;
+      }
+
+      /* Body Styles */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
@@ -89,7 +105,6 @@
         display: block;
         float: right;
         border-radius: 10px;
-        /* max-width: 300px; */
         width: 250px;
         margin: 40px;
         margin-right: 150px;
@@ -99,7 +114,7 @@
         background-color: #e63946;
       }
 
-      form-group {
+      .form-group {
         margin-bottom: 20px;
         text-align: left;
       }
@@ -186,7 +201,6 @@
         padding-left: 20px;
       }
 
-
       iframe {
         border-radius: 4%;
       }
@@ -202,8 +216,71 @@
       footer p {
         color: white;
       }
-      footer a{
+
+      footer a {
         color: white;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        nav {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background-color: #333;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          padding: 10px 0;
+        }
+
+        nav.active {
+          display: flex;
+        }
+
+        nav a {
+          margin: 10px 0;
+          padding: 10px;
+          text-align: center;
+          border-bottom: 1px solid #ccc;
+        }
+
+        .customerS {
+          display: block;
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        form {
+          float: none;
+          width: 90%;
+          margin: 20px auto;
+          padding: 20px;
+        }
+
+        .contain {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .left-div,
+        .right-div,
+        .map {
+          border-left: none;
+          padding: 10px;
+          text-align: center;
+        }
+
+        iframe {
+          width: 100%;
+          height: 200px;
+        }
       }
     </style>
   </head>
@@ -213,7 +290,12 @@
         <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo" />
         <h1>Tila Voluntary Association</h1>
       </div>
-      <nav>
+      <div class="hamburger" onclick="toggleNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav id="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="programs.html">Programs</a>
@@ -223,7 +305,7 @@
     </header>
 
     <h1 class="mainH1">Get in touch</h1>
-    <p>your ideas are important for us!</p>
+    <p>Your ideas are important for us!</p>
 
     <img
       class="customerS"
@@ -257,7 +339,6 @@
     </form>
 
     <div class="contain">
-    
       <div class="left-div">
         <i class="fas fa-phone"></i>
         <h2>Phone</h2>
@@ -272,7 +353,7 @@
           <i class="fab fa-facebook" style="color: #e63946; font-size: 1.5rem;"></i>
         </a>
       </div>
-     
+
       <div class="right-div">
         <i class="fas fa-envelope"></i>
         <h2>Email</h2>
@@ -291,14 +372,21 @@
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
+        ></iframe>
       </div>
     </div>
 
     <footer>
       <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
-      <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
+      <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</a>
     </footer>
+
+    <script>
+      // Function to toggle the navigation menu on mobile
+      function toggleNav() {
+        const nav = document.getElementById("nav");
+        nav.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
