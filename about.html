@@ -6,7 +6,7 @@
     <title>About Us - Tila Voluntary Association</title>
     <link rel="stylesheet" href="styles.css">    
     <style>
-    
+      /* General Styles */
       .container {
         max-width: 1200px;
         margin: auto;
@@ -17,9 +17,8 @@
       .team {
         display: flex;
         justify-content: space-around;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         margin-bottom: 0px;
-        /* sbox-shadow: 2px 10px 30px rgba(0, 0, 0, 0.1); */
         animation-name: teammove;
         animation-duration: 1.5s;
       }
@@ -36,7 +35,6 @@
       .team-member {
         text-align: center;
         margin: 1rem;
-        /* box-shadow: 2px 10px 30px rgba(0, 0, 0, 0.1); */
         border-radius: 20px;
       }
 
@@ -46,8 +44,8 @@
         padding-top: 5px;
         border-radius: 50%;
         transition: 0.3s;
-        /* border: 3px solid #e63946; */
       }
+
       .team-member img:hover {
         transform: translateY(-15px);
         border-bottom: 5px solid salmon;
@@ -70,6 +68,7 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
+
       .content-section:hover {
         transform: translateY(-15px);
       }
@@ -90,7 +89,7 @@
         margin: 0.5rem 0;
       }
 
-      /* middle divs */
+      /* Middle Divs */
       .contain {
         display: flex;
         flex-wrap: wrap;
@@ -100,13 +99,11 @@
         gap: 28px;
       }
 
-      .b0,
-      .boxes {
+      .b0, .boxes {
         padding: 20px;
         padding-top: 8px;
         border-top: 1.5px solid #e63946;
         box-shadow: 8px 12px 8px rgba(0, 0, 0, 0.1);
-        /* box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1); */
         border-radius: 15px;
         transition: transform 0.3s;
         animation-name: boxMove;
@@ -122,8 +119,7 @@
         }
       }
 
-      .b0:hover,
-      .boxes:hover {
+      .b0:hover, .boxes:hover {
         transform: translateY(-10px);
         box-shadow: 0px 25px 8px rgba(0, 0, 0, 0.1);
       }
@@ -136,11 +132,9 @@
         width: calc(46% - 10px);
       }
 
-      .b0 h2,
-      .boxes h2 {
+      .b0 h2, .boxes h2 {
         font-size: 2rem;
         margin-bottom: 15px;
-        /* color: blue; */
         color: #e63946;
       }
 
@@ -165,8 +159,7 @@
         transition: 0.6s;
       }
 
-      .b0:hover .btn,
-      .boxes:hover .btn {
+      .b0:hover .btn, .boxes:hover .btn {
         background-color: #0056b3;
         opacity: 1;
       }
@@ -182,9 +175,9 @@
       footer p {
         margin: 0;
       }
-      footer a{
+
+      footer a {
         color: white;
-        
       }
 
       .images-container {
@@ -192,7 +185,6 @@
         flex-wrap: wrap;
         gap: 20px;
         justify-content: space-evenly;
-        /* box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); */
         border-radius: 30px;
         max-width: 95%;
         padding-left: 15px;
@@ -207,6 +199,85 @@
       .imgs:hover {
         transform: skew(10deg, 10deg);
       }
+
+      /* Header and Navigation */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: red;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 4px 0;
+      }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        nav {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background: #333;
+          position: absolute;
+          top: 60px;
+          left: 0;
+        }
+
+        nav.active {
+          display: flex;
+        }
+
+        nav a {
+          margin: 10px 0;
+          color: white;
+        }
+
+        .team {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .boxes {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -215,7 +286,12 @@
         <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo" />
         <h1>Tila Voluntary Association</h1>
       </div>
-      <nav>
+      <div class="hamburger" onclick="toggleNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav id="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="programs.html">Programs</a>
@@ -361,7 +437,7 @@
 
     <footer>
       <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
-      <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
+      <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</a>
     </footer>
 
     <script>
@@ -378,6 +454,11 @@
           this.textContent =
             moreContent.style.display === "none" ? "Read More" : "hide";
         });
+      }
+
+      function toggleNav() {
+        const nav = document.getElementById("nav");
+        nav.classList.toggle("active");
       }
     </script>
   </body>
