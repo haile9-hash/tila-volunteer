@@ -6,7 +6,71 @@
     <title>Join Us - Tila Voluntary Association</title>
     <link rel="stylesheet" href="./styles.css">    
     <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e63946;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 18px;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        /* Container Styles */
         .container {
             max-width: 800px;
             margin: 2rem auto;
@@ -70,74 +134,132 @@
         footer p {
             margin: 0;
         }
-        footer a{
-        color: white;
+
+        footer a {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #e63946;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 10px 0;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 10px 0;
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            input, textarea, select, button {
+                font-size: 14px;
+            }
+
+            button {
+                width: 100%;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo">
+            <h1>Tila Voluntary Association</h1>
+        </div>
+        <div class="hamburger" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="programs.html">Programs</a>
+            <a href="partners.html">Partners</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
 
-<header>
-    <div class="logo">
-        <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo">
-        <h1>Tila Voluntary Association</h1>
+    <div class="container">
+        <h1>Become a Member</h1>
+        <p>Join our mission to make a positive impact in the community. Fill out the form below to get started!</p>
+        <form id="joinForm" action="index.php" method="post">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Your age" min="18" required>
+
+            <label for="skills">Skills or Areas of Interest</label>
+            <textarea id="skills" name="skills" rows="4" placeholder="Tell us how you can contribute"></textarea>
+
+            <label for="availability">Availability</label>
+            <select id="availability" name="availability">
+                <option value="Part-Time">Part-Time</option>
+                <option value="Full-Time">Full-Time</option>
+            </select>
+
+            <button type="submit">Submit</button>
+            <p class="success-message" id="successMessage">Thank you for joining us! We will contact you soon.</p>
+        </form>
     </div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="programs.html">Programs</a>
-        <a href="partners.html">Partners</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
-</header>
 
-<div class="container">
-    <h1>Become a Member</h1>
-    <p>Join our mission to make a positive impact in the community. Fill out the form below to get started!</p>
-    <form action="index.php"method="post">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required>
+    <footer>
+        <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
+        <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</a>
+    </footer>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Your email" required>
+    <script>
+        // Function to toggle the navigation menu on mobile
+        function toggleNav() {
+            const nav = document.getElementById("nav");
+            nav.classList.toggle("active");
+        }
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+        // Form submission handling
+        document.getElementById('joinForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
 
-        <label for="age">Age</label>
-        <input type="number" id="age" name="age" placeholder="Your age" min="18" required>
+            // Display success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
 
-        <label for="skills">Skills or Areas of Interest</label>
-        <textarea id="skills" name="skills" rows="4" placeholder="Tell us how you can contribute"></textarea>
-
-        <label for="availability">Availability</label>
-        <select id="availability" name="availability">
-            <option value="Part-Time">Part-Time</option>
-            <option value="Full-Time">Full-Time</option>
-        </select>
-
-        <button type="submit">Submit</button>
-        <p class="success-message" id="successMessage">Thank you for joining us! We will contact you soon.</p>
-    </form>
-</div>
-
-<footer>
-    <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
-    <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
-</footer>
-
-<script>
-    document.getElementById('joinForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
-
-        // Display success message
-        const successMessage = document.getElementById('successMessage');
-        successMessage.style.display = 'block';
-
-        // Clear the form fields
-        event.target.reset();
-    });
-</script>
-
+            // Clear the form fields
+            event.target.reset();
+        });
+    </script>
 </body>
 </html>
