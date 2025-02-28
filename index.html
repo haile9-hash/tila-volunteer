@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us - Tila Voluntary Association</title>
-    <link rel="stylesheet" href="./styles.css">    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tila Voluntary Association</title>
+    <link rel="stylesheet" href="./styles.css"> 
     <style>
-        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            font-family: sans-serif;
         }
 
-        /* Header Section */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #e63946;
-            padding: 10px 20px;
-            border-bottom: 2px solid #ccc;
-            position: relative;
-            z-index: 10;
+            padding: 1em;
+            background-color: red;
         }
 
         .logo {
@@ -32,157 +25,140 @@
         }
 
         .logo img {
-            height: 40px;
+            height: 50px; /* Adjust as needed */
             margin-right: 10px;
-            border-radius: 50%;
-        }
-
-        .logo h1 {
-            font-size: 18px;
-            color: white;
         }
 
         nav {
-            display: flex;
-            gap: 20px;
+            display: none; /* Initially hidden on small screens */
+            flex-direction: column;
+            width: 100%;
+            background-color: #34495e;
+            position: absolute;
+            top: 70px; /* Adjust based on header height */
+            left: 0;
+            z-index: 100;
+        }
+
+        nav.active {
+            display: flex; /* Show the nav when active */
         }
 
         nav a {
-            text-decoration: none;
             color: white;
-            font-size: 16px;
+            text-decoration: none;
+            padding: 1em;
+            text-align: center;
+            border-bottom: 1px solid #2c3e50;
         }
 
-        nav a:hover {
-            color: #007bff;
+        nav a:last-child {
+            border-bottom: none;
         }
 
         .hamburger {
-            display: none;
-            flex-direction: column;
+            display: block; /* Show hamburger on small screens */
             cursor: pointer;
+            padding: 10px;
         }
 
         .hamburger div {
             width: 25px;
             height: 3px;
             background-color: white;
-            margin: 4px 0;
+            margin: 5px 0;
         }
 
-        /* Container Styles */
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #e63946;
-        }
-
-        form {
+        .hero {
             display: flex;
             flex-direction: column;
-        }
-
-        label {
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-
-        input, textarea, select, button {
-            margin-top: 0.5rem;
-            padding: 0.75rem;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        button {
-            background-color: #e63946;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 70px); /* Adjust based on header height */
+            background: url("./assets/Tila 1.jpg") no-repeat center center;
+            background-size: cover;
             color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: blue;
-        }
-
-        .success-message {
-            color: #e63946;
-            margin-top: 1rem;
             text-align: center;
-            display: none;
+            padding: 2em 1em;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+        }
+
+        .cta-buttons {
+            margin-top: 1em;
+            animation-name: animBtn;
+            animation-duration: 1s;
+        }
+
+        @keyframes animBtn {
+            from {
+                transform: translateY(-15px);
+            }
+            to {
+                transform: translateY(0px);
+            }
+        }
+
+        .cta-buttons a {
+            text-decoration: none;
+            color: white;
+            padding: 0.8em 1.5em;
+            margin: 0 0.5em;
+            border-radius: 5px;
+            font-size: 1.2em;
+            background-color: #8a2be2;
+            display: inline-block;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #5d3fd3;
         }
 
         footer {
-            background-color: #e63946;
+            background-color: hsl(0, 0%, 20%);
             color: white;
             text-align: center;
-            padding: 10px 0;
-            margin-top: 2rem;
-        }
-
-        footer p {
-            margin: 0;
+            padding: 1em 0;
+            position: relative;
         }
 
         footer a {
             color: white;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
+        /* Media query for larger screens */
+        @media (min-width: 768px) {
             nav {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #e63946;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                padding: 10px 0;
-            }
-
-            nav.active {
-                display: flex;
+                display: flex; /* Show nav on larger screens */
+                flex-direction: row;
+                position: static;
+                width: auto;
+                background-color: transparent;
             }
 
             nav a {
-                margin: 10px 0;
-                padding: 10px;
-                text-align: center;
-                border-bottom: 1px solid #ccc;
+                color: white; /* Change nav link color on larger screens */
+                border-bottom: none;
+                padding: 0.5em 1em;
+            }
+            nav a:hover{
+                background-color: #ddd;
+                border-radius: 5px;
             }
 
-            .container {
-                margin: 20px auto;
-                padding: 15px;
+            .hamburger {
+                display: none; /* Hide hamburger on larger screens */
             }
 
-            h1 {
-                font-size: 24px;
-            }
-
-            input, textarea, select, button {
-                font-size: 14px;
-            }
-
-            button {
-                width: 100%;
-                font-size: 14px;
+            .hero {
+                min-height: calc(100vh - 60px); /* Adjust for larger screens */
             }
         }
     </style>
@@ -190,15 +166,15 @@
 <body>
     <header>
         <div class="logo">
-            <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo">
-            <h1>Tila Voluntary Association</h1>
+            <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo" />
+            <h1>Tila Voluntary organization</h1>
         </div>
-        <div class="hamburger" onclick="toggleNav()">
+        <div class="hamburger">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <nav id="nav">
+        <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="programs.html">Programs</a>
@@ -207,58 +183,27 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h1>Become a Member</h1>
-        <p>Join our mission to make a positive impact in the community. Fill out the form below to get started!</p>
-        <form id="joinForm" action="index.php" method="post">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required>
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Your email" required>
-
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
-
-            <label for="age">Age</label>
-            <input type="number" id="age" name="age" placeholder="Your age" min="18" required>
-
-            <label for="skills">Skills or Areas of Interest</label>
-            <textarea id="skills" name="skills" rows="4" placeholder="Tell us how you can contribute"></textarea>
-
-            <label for="availability">Availability</label>
-            <select id="availability" name="availability">
-                <option value="Part-Time">Part-Time</option>
-                <option value="Full-Time">Full-Time</option>
-            </select>
-
-            <button type="submit">Submit</button>
-            <p class="success-message" id="successMessage">Thank you for joining us! We will contact you soon.</p>
-        </form>
-    </div>
+    <section class="hero">
+        <h1>Empowering Communities, Transforming Lives</h1>
+        <p>Join us in making a difference for a better tomorrow.</p>
+        <div class="cta-buttons">
+            <br />
+            <a href="Donate.html" target="_blank">Donate Now</a>
+            <a href="join.html">Join Us</a>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
+        <p>&copy; Tila Voluntary Association 2025. All Rights Reserved.</p>
         <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</a>
     </footer>
 
     <script>
-        // Function to toggle the navigation menu on mobile
-        function toggleNav() {
-            const nav = document.getElementById("nav");
-            nav.classList.toggle("active");
-        }
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
 
-        // Form submission handling
-        document.getElementById('joinForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            // Display success message
-            const successMessage = document.getElementById('successMessage');
-            successMessage.style.display = 'block';
-
-            // Clear the form fields
-            event.target.reset();
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
         });
     </script>
 </body>
