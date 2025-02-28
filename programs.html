@@ -6,11 +6,63 @@
     <title>Tila Volunteer Association - Programs</title>
     <link rel="stylesheet" href="./styles.css">    
     <style>
-        
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: red;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
         /* Programs Section */
         .programs-section {
             max-width: 1200px;
             margin: 40px auto;
+            padding: 0 20px;
         }
 
         .programs-grid {
@@ -26,6 +78,11 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-15px);
         }
 
         .program-card img {
@@ -48,9 +105,6 @@
             color: #555;
             line-height: 1.6;
         }
-        .program-card:hover {
-            transform: translateY(-15px); /* Slightly lift the card on hover */
-        }
 
         /* Footer Styles */
         footer {
@@ -60,13 +114,40 @@
             padding: 20px 0;
             margin-top: 40px;
         }
-        footer a{
-        color: white;
+
+        footer a {
+            color: white;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #f8f9fa;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 10px 0;
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -79,7 +160,12 @@
             <img src="./assets/Tila.jpg" alt="Tila Voluntary Association Logo">
             <h1>Tila Voluntary Association</h1>
         </div>
-        <nav>
+        <div class="hamburger" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="programs.html">Programs</a>
@@ -93,7 +179,6 @@
         <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px;">Our Ongoing Programs</h2>
 
         <div class="programs-grid">
-
             <div class="program-card">
                 <img src="./assets/Tila im8.jpg" alt="Blood Donation">
                 <div class="program-content">
@@ -125,6 +210,7 @@
                     <p>We organize community exhibitions to showcase local talents, arts, and cultural heritage. Come be part of this vibrant initiative!</p>
                 </div>
             </div>
+
             <div class="program-card">
                 <img src="./assets/Tila im5.jpg" alt="Street Children Support">
                 <div class="program-content">
@@ -132,7 +218,7 @@
                     <p>We provide assistance to street children, helping them access education, healthcare, and safe environments. Your support can change lives!</p>
                 </div>
             </div>
-    
+
             <div class="program-card">
                 <img src="./assets/Tila im10.jpg" alt="Life Skills Training">
                 <div class="program-content">
@@ -140,19 +226,21 @@
                     <p>Empowering individuals with essential life skills such as financial literacy, health education, and conflict resolution.</p>
                 </div>
             </div>
-    
-        </div>
-
-            <!-- Add more programs here as needed -->
-
         </div>
     </div>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Tila Voluntary Association. All Rights Reserved.</p>
-        <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</p>
+        <a href="https://t.me/codeBiruh"> Designed and Developed by CodeBiruh 2025</a>
     </footer>
 
+    <script>
+        // Function to toggle the navigation menu on mobile
+        function toggleNav() {
+            const nav = document.getElementById("nav");
+            nav.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
